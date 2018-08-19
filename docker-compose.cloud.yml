@@ -1,0 +1,33 @@
+
+# This can be used to run a production version of the Angular and Node containers
+
+# Prereq: ngnix-angular and node-service container are available on DockerHub
+# docker-compose -f docker-compose.cloud up
+
+version: '3.1'
+
+services:
+
+  nginx-angular:
+    container_name: nginx-angular
+    image: nginx-angular
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on: 
+      - node-service
+    networks:
+      - app-network
+  node-service:
+    container_name: angular-node-service
+    image: angular-node-service
+    environment:
+      - NODE_ENV=production
+    ports:
+      - "3000:3000"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
