@@ -2,7 +2,7 @@
 # This can be used to run a production version of the Angular and Node containers
 
 # Prereq: ngnix-angular and node-service container are available on DockerHub
-# docker-compose -f docker-compose.cloud up
+# docker-compose -f docker-compose.cloud.yml up
 
 version: '3.1'
 
