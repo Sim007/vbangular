@@ -13,7 +13,7 @@ export class DataService {
     ordersUrl = 'http://localhost:3000/api/orders';
 
     // Use the following properties if running the app stand-alone with no external dependencies
-    //customersUrl = 'assets/customers.json';
+    // customersUrl = 'assets/customers.json';
     // ordersUrl = 'assets/orders.json';
 
     constructor(private http: HttpClient) { }
